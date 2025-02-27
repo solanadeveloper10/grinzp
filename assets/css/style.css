@@ -14,9 +14,9 @@ Tags:blackfriday, blackfridayoffer, product landing page, product offer, friday 
 
 .Rectangle_2_copy_3 {
   border-radius: 2px;
-  background-image: -moz-linear-gradient(0deg, #fdfccd 0%, #f6ff36 100%);
-  background-image: -webkit-linear-gradient(0deg, #fdfccd 0%, #f6ff36 100%);
-  background-image: -ms-linear-gradient(0deg, #fdfccd 0%, #f6ff36 100%);
+  background-image: -moz-linear-gradient(0deg, #fdfccd 0%, rgb(124, 222, 53) 100%);
+  background-image: -webkit-linear-gradient(0deg, #fdfccd 0%, rgb(124, 222, 53) 100%);
+  background-image: -ms-linear-gradient(0deg, #fdfccd 0%, rgb(124, 222, 53) 100%);
   position: absolute;
   left: 307px;
   top: 655px;
@@ -372,7 +372,7 @@ body {
   line-height: 1.4;
   font-family: "Alfa Slab One", cursive;
   /* background-color: #20033d; */
-  /* background-color: rgb(124, 222, 53); */
+  /* background-color: rgb(124, 222, 53) */
   background-color: #ffffff;
 }
 
@@ -957,7 +957,7 @@ a {
 }
 
 .color--theme-color {
-  color: #f6ff3d !important;
+  color: rgb(124, 222, 53) !important;
 }
 
 .color--gradient-y {
@@ -1493,12 +1493,12 @@ ol {
 
 .contact__form .default-btn {
   background-color: #fff;
-  color: #f6ff3d;
+  color: rgb(124, 222, 53);
 }
 
 @media not all and (pointer: coarse) {
   .contact__form .default-btn:hover {
-    color: #f6ff3d;
+    color: rgb(124, 222, 53);
   }
 }
 
@@ -1514,7 +1514,7 @@ ol {
 
 .footer__content p {
   font-size: 1.125rem;
-  color: #fff;
+  color: #000000;
   max-inline-size: 42ch;
   margin-inline: auto;
 }
@@ -1533,7 +1533,7 @@ ol {
   line-height: 50px;
   transform-origin: right;
   transition: all 0.3s ease;
-  background: linear-gradient(90deg, #fdfccd 0%, #f6ff36 100%);
+  background: linear-gradient(90deg, #fdfccd 0%, rgb(124, 222, 53) 100%);
   box-shadow: 0 5px 0px 0px currentColor;
 }
 
@@ -1570,7 +1570,7 @@ ol {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #f6ff3d;
+  background: rgb(124, 222, 53);
   transition: transform 0.5s;
   transform-origin: right;
   transform: scaleX(0);
@@ -1590,7 +1590,7 @@ ol {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #f6ff3d;
+  background: rgb(124, 222, 53);
   transition: transform 0.5s;
   transform-origin: left;
   transform: scaleX(0);
@@ -1610,7 +1610,7 @@ ol {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #f6ff3d;
+  background: rgb(124, 222, 53);
   transition: transform 0.5s;
   transform-origin: bottom;
   transform: scaleY(0);
@@ -1630,7 +1630,7 @@ ol {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #f6ff3d;
+  background: rgb(124, 222, 53);
   transition: transform 0.5s;
   transform-origin: top;
   transform: scaleY(0);
@@ -1646,14 +1646,14 @@ ol {
 .default-btn:hover {
   color: #0d142f;
   transform: translateY(3px);
-  background: linear-gradient(-90deg, #fdfccd 0%, #f6ff36 100%);
-  border-color: #f6ff3d;
+  background: linear-gradient(-90deg, #fdfccd 0%, rgb(124, 222, 53) 100%);
+  border-color: rgb(124, 222, 53);
   box-shadow: none;
 }
 
 .default-btn-active {
-  background-color: #f6ff3d;
-  border-color: #f6ff3d;
+  background-color: rgb(124, 222, 53);
+  border-color: rgb(124, 222, 53);
 }
 
 .preloader {
@@ -1790,7 +1790,7 @@ ol {
 }
 
 .roadmap__content h4 {
-  color: #f6ff3d;
+  color: rgb(124, 222, 53);
 }
 
 .roadmap__content p {
@@ -1809,7 +1809,7 @@ ol {
 
 .roadmap__next:hover,
 .roadmap__prev:hover {
-  background: linear-gradient(0deg, #fdfccd 0%, #f6ff36 100%);
+  background: linear-gradient(0deg, #fdfccd 0%, rgb(124, 222, 53) 100%);
 }
 
 .team {
@@ -1834,7 +1834,7 @@ ol {
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  background: linear-gradient(180deg, #fdfccd 0%, #f6ff36 100%);
+  background: linear-gradient(180deg, #fdfccd 0%, rgb(124, 222, 53) 100%);
   text-align: center;
 }
 
@@ -1996,7 +1996,7 @@ ol {
 
 @media not all and (pointer: coarse) {
   .social__link:hover {
-    background-color: #f6ff3d;
+    background-color: rgb(124, 222, 53);
     -webkit-transform: translateY(-3px);
     -moz-transform: translateY(-3px);
     -ms-transform: translateY(-3px);
@@ -2010,7 +2010,7 @@ ol {
 }
 
 .mint__name {
-  color: #f6ff3d;
+  color: rgb(124, 222, 53);
 }
 
 @media (min-width: 992px) {
@@ -2043,6 +2043,23 @@ ol {
     position: absolute;
     bottom: 0;
   }
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.team__thumb {
+  width: 306px;
+  height: 306px;
+}
+
+.gallery-image {
+  width: 306px;
+  height: 306px;
+
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */
