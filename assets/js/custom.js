@@ -193,4 +193,47 @@
         });
     });
 
+    document.addEventListener('DOMContentLoaded', function () {
+        const overlay = document.querySelector('.hero-overlay');
+        const hero = document.querySelector('.hero');
+
+        // Initialize cursor position variables
+        let currentX = 0;
+        let currentY = 0;
+        let targetX = 0;
+        let targetY = 0;
+
+        if (overlay && hero) {
+            hero.addEventListener('mousemove', function (e) {
+                const rect = hero.getBoundingClientRect();
+                // Update target position
+                targetX = e.clientX - rect.left;
+                targetY = e.clientY - rect.top;
+                overlay.classList.add('hover');
+            });
+
+            hero.addEventListener('mouseleave', function () {
+                overlay.classList.remove('hover');
+            });
+
+            // Animation loop for smooth cursor movement
+            function animate() {
+                // Increased lag with lower ease value
+                const ease = 0.08; // Changed from 0.15 to 0.08 for more lag
+                currentX = currentX + (targetX - currentX) * ease;
+                currentY = currentY + (targetY - currentY) * ease;
+
+                // Update the cursor position
+                overlay.style.setProperty('--x', `${currentX}px`);
+                overlay.style.setProperty('--y', `${currentY}px`);
+
+                // Continue the animation loop
+                requestAnimationFrame(animate);
+            }
+
+            // Start the animation loop
+            animate();
+        }
+    });
+
 })(jQuery);
