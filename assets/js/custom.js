@@ -126,9 +126,6 @@
         },
     });
 
-
-
-
     //Countdown js initialization
     document.addEventListener('readystatechange', event => {
         if (event.target.readyState === "complete") {
@@ -169,5 +166,31 @@
         }
     });
 
+    document.addEventListener('DOMContentLoaded', () => {
+        "use strict";
+
+        // Add copy button
+        const copyButton = document.getElementById('contract');
+        const textToCopy = document.getElementById('contract-text');
+        const copiedMssg = document.getElementById('contract-text-copied');
+
+        copyButton.addEventListener('click', async () => {
+            try {
+                // Copy text to clipboard
+                console.log(textToCopy, textToCopy.innerText)
+
+                const textToCopyInnerText = textToCopy.innerText;
+
+                await navigator.clipboard.writeText(textToCopyInnerText);
+                // Show success message
+                copiedMssg.style.display = 'flex';
+                setTimeout(() => {
+                    copiedMssg.style.display = 'none';
+                }, 2000); // Hide the message after 2 seconds
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+            }
+        });
+    });
 
 })(jQuery);
