@@ -1,15 +1,6 @@
-/*!
-Template Name: Niftyland
-Template URI: https://www.templatemonster.com/authors/Labartisan/
-Author: Labartisan
-Author URI: https://www.templatemonster.com/authors/Labartisan/
-Description: Description
-Version: 1.0.0
-Text Domain: Niftyland
-Tags:blackfriday, blackfridayoffer, product landing page, product offer, friday landing page, blackfriday product anding page
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&family=Permanent+Marker&display=swap');
 
-*/
-/*=====================================================================*/
 @import url("../../../../../css2");
 
 .Rectangle_2_copy_3 {
@@ -368,9 +359,9 @@ template {
  */
 body {
   color: #000000;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.4;
-  font-family: "Alfa Slab One", cursive;
+  font-family: "Gaegu", sans-serif;
   /* background-color: #20033d; */
   /* background-color: rgb(124, 222, 53) */
   background-color: #ffffff;
@@ -386,7 +377,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Alfa Slab One", cursive;
+  font-family: "Permanent Marker", cursive;
   color: #000000;
   line-height: 1.2;
   font-weight: 400;
@@ -1015,7 +1006,7 @@ a {
 .mint,
 .faq,
 .accordion__button .plus-icon,
-.team__content,
+.gallery__content,
 .default-btn,
 .contact__form,
 .contact__wrapper,
@@ -1040,7 +1031,7 @@ a {
 .faq,
 .accordion__item,
 .community,
-.team,
+.gallery,
 .roadmap,
 .gallery__slider,
 .gallery,
@@ -1052,7 +1043,7 @@ a {
 }
 
 .accordion__button,
-.team__thumb img,
+.gallery__thumb img,
 .contact__form input,
 .contact__form textarea,
 .navbar-toggler--icon:after,
@@ -1069,7 +1060,7 @@ a {
 }
 
 .social__link,
-.team__thumb img,
+.gallery__thumb img,
 .roadmap__next,
 .roadmap__prev,
 .default-btn,
@@ -1104,7 +1095,7 @@ ol {
   margin-bottom: 0;
 }
 
-.team__content p {
+.gallery__content p {
   margin-bottom: 5px;
 }
 
@@ -1164,7 +1155,7 @@ ol {
   padding: 0;
 }
 
-.team__content {
+.gallery__content {
   padding: 20px;
 }
 
@@ -1202,7 +1193,7 @@ ol {
 
 .nav-link {
   color: #000000;
-  font-family: "Alfa Slab One", cursive;
+  font-family: "Gaegu", sans-serif;
 }
 
 @media (min-width: 1200px) {
@@ -1301,7 +1292,11 @@ ol {
 }
 
 .social-btns .default-btn span {
-  text-transform: capitalize;
+  text-transform: uppercase;
+
+  font-size: 1.5rem;
+
+  font-weight: 900;
 }
 
 .social-btns .default-btn:hover {
@@ -1310,7 +1305,7 @@ ol {
   -ms-transform: none;
   -o-transform: none;
   transform: none;
-  background-color: #f4ff0a;
+  background-color: #b9ef97);
 }
 
 /*=-=-=-======< Section header start here >==========-=-=-=-*/
@@ -1510,13 +1505,6 @@ ol {
   background-position: center;
 }
 
-.footer__content p {
-  font-size: 1.125rem;
-  color: #000000;
-  max-inline-size: 42ch;
-  margin-inline: auto;
-}
-
 .footer__copyright {
   border-top: 2px solid rgba(255, 255, 255, 0.05);
 
@@ -1529,20 +1517,22 @@ ol {
   font-size: 1.125rem;
   border-radius: 4px;
   text-decoration: none;
-  font-family: "Alfa Slab One", cursive;
+  font-family: "Gaegu", sans-serif;
   color: #0d142f;
   padding: 0 1.7rem;
   line-height: 50px;
   transform-origin: right;
   transition: all 0.3s ease;
-  background: linear-gradient(90deg, #fdfccd 0%, rgb(124, 222, 53) 100%);
+  background: rgb(124, 222, 53);
   box-shadow: 0 5px 0px 0px currentColor;
+
+  transition: all 0.3s ease;
 }
 
 @media (min-width: 768px) {
   .default-btn {
-    padding: 0 2.25rem;
-    line-height: 56px;
+    padding: 0 2rem;
+    line-height: 3rem;
   }
 }
 
@@ -1648,7 +1638,7 @@ ol {
 .default-btn:hover {
   color: #0d142f;
   transform: translateY(3px);
-  background: linear-gradient(-90deg, #fdfccd 0%, rgb(124, 222, 53) 100%);
+  background: rgba(124, 222, 53, 0.766);
   border-color: rgb(124, 222, 53);
   box-shadow: none;
 }
@@ -1814,23 +1804,23 @@ ol {
   background: linear-gradient(0deg, #fdfccd 0%, rgb(124, 222, 53) 100%);
 }
 
-.team {
+.gallery {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 @media (min-width: 992px) {
-  .team .section-header__content p {
+  .gallery .section-header__content p {
     max-inline-size: 55ch;
   }
 }
 
-.team .section-header__content p {
+.gallery .section-header__content p {
   max-inline-size: 55ch;
 }
 
-.team__item {
+.gallery__item {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -1840,7 +1830,7 @@ ol {
   text-align: center;
 }
 
-.team__item:hover .team__thumb img {
+.gallery__item:hover .gallery__thumb img {
   -webkit-transform: none;
   -moz-transform: none;
   -ms-transform: none;
@@ -1848,7 +1838,7 @@ ol {
   transform: none;
 }
 
-.team__thumb img {
+.gallery__thumb img {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -1861,15 +1851,15 @@ ol {
   transform: translate(10px, -10px);
 }
 
-.team__content {
+.gallery__content {
   z-index: 1;
 }
 
-.team__content h5 a {
+.gallery__content h5 a {
   color: #0d142f;
 }
 
-.team__content p {
+.gallery__content p {
   color: #555;
   font-size: 1rem;
 }
@@ -1894,7 +1884,7 @@ ol {
   font-size: calc(1.275rem + 0.2571428571vw);
   background-color: transparent;
   color: #0d142f;
-  font-family: "Alfa Slab One", cursive;
+  font-family: "Gaegu", sans-serif;
   font-weight: 400;
   padding: 1.5rem 1rem;
   border: none;
@@ -2052,7 +2042,7 @@ ol {
   height: auto;
 }
 
-.team__thumb {
+.gallery__thumb {
   width: 306px;
   height: 306px;
 }
@@ -2064,13 +2054,13 @@ ol {
   object-fit: cover;
 }
 
-.roadmap {
+#contract-section {
   background-color: #b9ef97;
 
   padding: 100px 0;
 }
 
-.roadmap-contract {
+.contract-ca {
   text-align: center;
 
   display: block;
@@ -2090,7 +2080,7 @@ ol {
 #contract-text {
   display: inline-block;
 
-  max-width: 100%;
+  width: 100%;
 
   padding: 10px 15px;
 
@@ -2129,12 +2119,7 @@ ol {
  * Tokenomics Section Style
  -------------------------------------------------------------- */
 .tokenomics-area {
-  border-radius: 0px;
-  padding: 70px 0;
   overflow: hidden;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
   color: #fff;
   position: relative;
 
@@ -2264,6 +2249,10 @@ ol {
 
 .hero-title {
   font-size: 10rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 5rem;
+  }
 }
 
 .hero-cursor {
@@ -2285,4 +2274,58 @@ ol {
     -webkit-mask-image: radial-gradient(circle 100px at var(--x) var(--y), transparent 100%, black 100%);
     mask-image: radial-gradient(circle 100px at var(--x) var(--y), transparent 100%, black 100%);
   }
+}
+
+.collection__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.collection__content br {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.collection__content p {
+  font-size: 2.5rem;
+
+  @media screen and (max-width: 768px) {
+    text-align: justify;
+
+    font-size: 1.75rem;
+  }
+}
+
+.tokenomics-item-text {
+  font-size: 2.5rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.gallery-description {
+  font-size: 2.5rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.75rem;
+  }
+}
+
+.gallery__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tokenomics-total-supply {
+  color: #ffffff;
 }
