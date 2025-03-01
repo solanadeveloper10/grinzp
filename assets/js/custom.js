@@ -197,41 +197,65 @@
         const overlay = document.querySelector('.hero-overlay');
         const hero = document.querySelector('.hero');
 
-        // Initialize cursor position variables
         let currentX = 0;
         let currentY = 0;
         let targetX = 0;
         let targetY = 0;
 
+        // Check if it's a touch device
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
         if (overlay && hero) {
-            hero.addEventListener('mousemove', function (e) {
+            if (isTouchDevice) {
+                // Touch device behavior
+                document.addEventListener('touchstart', handleTouch, { passive: false });
+                document.addEventListener('touchmove', handleTouch, { passive: false });
+                document.addEventListener('touchend', removeHover);
+            } else {
+                // Desktop behavior
+                hero.addEventListener('mousemove', updatePosition);
+                hero.addEventListener('mouseleave', removeHover);
+            }
+
+            function handleTouch(e) {
+                e.preventDefault();
+                const touch = e.touches[0];
+                if (!touch) return;
+
                 const rect = hero.getBoundingClientRect();
-                // Update target position
+                if (touch.clientY >= rect.top && touch.clientY <= rect.bottom &&
+                    touch.clientX >= rect.left && touch.clientX <= rect.right) {
+
+                    targetX = touch.clientX - rect.left;
+                    targetY = touch.clientY - rect.top;
+                    overlay.classList.add('hover');
+                } else {
+                    removeHover();
+                }
+            }
+
+            function updatePosition(e) {
+                const rect = hero.getBoundingClientRect();
                 targetX = e.clientX - rect.left;
                 targetY = e.clientY - rect.top;
                 overlay.classList.add('hover');
-            });
+            }
 
-            hero.addEventListener('mouseleave', function () {
+            function removeHover() {
                 overlay.classList.remove('hover');
-            });
+            }
 
-            // Animation loop for smooth cursor movement
             function animate() {
-                // Increased lag with lower ease value
-                const ease = 0.08; // Changed from 0.15 to 0.08 for more lag
+                const ease = isTouchDevice ? 0.2 : 0.08; // Faster follow on mobile
                 currentX = currentX + (targetX - currentX) * ease;
                 currentY = currentY + (targetY - currentY) * ease;
 
-                // Update the cursor position
                 overlay.style.setProperty('--x', `${currentX}px`);
                 overlay.style.setProperty('--y', `${currentY}px`);
 
-                // Continue the animation loop
                 requestAnimationFrame(animate);
             }
 
-            // Start the animation loop
             animate();
         }
     });

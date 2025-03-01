@@ -2244,15 +2244,32 @@ ol {
   width: 100%;
   height: 100%;
   background-color: #b9ef97;
-  -webkit-mask-image: none;
-  mask-image: none;
-  /* Increased transition duration for smoother movement */
-  transition: -webkit-mask-image 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: mask-image 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
   display: flex;
   justify-content: center;
   align-items: center;
+  touch-action: none;
+  /* Prevent scrolling on touch devices */
+}
+
+.hero-overlay.hover {
+  -webkit-mask: linear-gradient(black, black), url('../images/hero/grinzo-mask.png') no-repeat;
+  mask: linear-gradient(black, black), url('../images/hero/grinzo-mask.png') no-repeat;
+  -webkit-mask-size: 100%, 300px;
+  mask-size: 100%, 300px;
+  -webkit-mask-position: 0 0, calc(var(--x) - 150px) calc(var(--y) - 150px);
+  mask-position: 0 0, calc(var(--x) - 150px) calc(var(--y) - 150px);
+  -webkit-mask-composite: destination-out;
+  mask-composite: subtract;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .hero-overlay.hover {
+    -webkit-mask-size: 100%, 200px;
+    mask-size: 100%, 200px;
+    -webkit-mask-position: 0 0, calc(var(--x) - 100px) calc(var(--y) - 100px);
+    mask-position: 0 0, calc(var(--x) - 100px) calc(var(--y) - 100px);
+  }
 }
 
 .hero-title {
@@ -2275,17 +2292,6 @@ ol {
 @media (hover: hover) {
   .hero-cursor {
     display: block;
-  }
-
-  .hero-overlay.hover {
-    -webkit-mask: linear-gradient(black, black), url('../images/hero/grinzo-mask.png') no-repeat;
-    mask: linear-gradient(black, black), url('../images/hero/grinzo-mask.png') no-repeat;
-    -webkit-mask-size: 100%, 300px;
-    mask-size: 100%, 300px;
-    -webkit-mask-position: 0 0, calc(var(--x) - 150px) calc(var(--y) - 150px);
-    mask-position: 0 0, calc(var(--x) - 150px) calc(var(--y) - 150px);
-    -webkit-mask-composite: destination-out;
-    mask-composite: subtract;
   }
 }
 
