@@ -2278,9 +2278,14 @@ ol {
   }
 
   .hero-overlay.hover {
-    /* Increased circle size for more dramatic effect */
-    -webkit-mask-image: radial-gradient(circle 100px at var(--x) var(--y), transparent 100%, black 100%);
-    mask-image: radial-gradient(circle 100px at var(--x) var(--y), transparent 100%, black 100%);
+    -webkit-mask: linear-gradient(black, black), url('../images/hero/grinzo-mask.png') no-repeat;
+    mask: linear-gradient(black, black), url('../images/hero/grinzo-mask.png') no-repeat;
+    -webkit-mask-size: 100%, 300px;
+    mask-size: 100%, 300px;
+    -webkit-mask-position: 0 0, calc(var(--x) - 150px) calc(var(--y) - 150px);
+    mask-position: 0 0, calc(var(--x) - 150px) calc(var(--y) - 150px);
+    -webkit-mask-composite: destination-out;
+    mask-composite: subtract;
   }
 }
 
