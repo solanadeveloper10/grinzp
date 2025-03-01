@@ -2298,10 +2298,12 @@ ol {
 .collection__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 64px;
 
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
+
+    gap: 32px;
   }
 }
 
