@@ -2247,8 +2247,6 @@ ol {
   display: flex;
   justify-content: center;
   align-items: center;
-  touch-action: none;
-  /* Prevent scrolling on touch devices */
 }
 
 .hero-overlay.hover {

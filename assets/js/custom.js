@@ -202,23 +202,21 @@
         let targetX = 0;
         let targetY = 0;
 
-        // Check if it's a touch device
         const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
         if (overlay && hero) {
             if (isTouchDevice) {
-                // Touch device behavior
-                document.addEventListener('touchstart', handleTouch, { passive: false });
-                document.addEventListener('touchmove', handleTouch, { passive: false });
-                document.addEventListener('touchend', removeHover);
+                // Only add touch events to the hero section, not the document
+                hero.addEventListener('touchstart', handleTouch, { passive: true });
+                hero.addEventListener('touchmove', handleTouch, { passive: true });
+                hero.addEventListener('touchend', removeHover);
             } else {
-                // Desktop behavior
                 hero.addEventListener('mousemove', updatePosition);
                 hero.addEventListener('mouseleave', removeHover);
             }
 
             function handleTouch(e) {
-                e.preventDefault();
+                // Remove preventDefault to allow scrolling
                 const touch = e.touches[0];
                 if (!touch) return;
 
